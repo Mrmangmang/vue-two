@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        // let ary = [12, 23, 34, 45]
+        // console.log(typeof ary) // =>"object"
+        // console.dir(ary)  // 1. 数字作为索引（key属性名） 2. length代表长度
+
+
+        let ary = [10, 20]
+        let res = ary.push(12, 30)
+        console.log(res) //4
+        console.log(ary) // [10, 20, 12, 30
+        // 基于原生js操作键值对的方法，也可以向末尾追加一项新的内容
+        ary[ary.length] = 40
+        //ary.4 = 40
+        console.log(ary)
+
+    </script>
+</body>
+</html>

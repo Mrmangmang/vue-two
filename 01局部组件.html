@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+
+        <App></App>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('Vheader',{
+            template:`
+            <div>
+            我是导航组件
+</div>
+            `
+        })
+        Vue.component('Vaside',{
+            template: `
+            <div>
+            我是侧边栏
+</div>
+            `
+        })
+
+        const Vbtn = {
+            template:`
+            <button>
+            按钮
+            </button>
+            `
+        }
+        const Vcontent = {
+            data(){
+                return {
+
+                }
+            },
+            template:`
+                    <div>
+                        我是内容组件
+                        <Vbtn></Vbtn>
+                        <Vbtn></Vbtn>
+                        <Vbtn></Vbtn>
+                        <Vbtn></Vbtn>
+                    </div>
+            `,
+            components:{
+                Vbtn
+            }
+        }
+
+
+        const  App = {
+            data(){
+                return {
+                    msg:'我是App组件'
+                }
+            },
+            components: {
+                Vcontent
+            },
+            template:`
+                    <div>
+                        <Vheader></Vheader>
+                        <div>
+                            <Vaside></Vaside>
+                            <Vcontent></Vcontent>
+                        </div>
+                    </div>
+            `,
+            methods:{
+              handleClick(){
+                  this.msg = '学习局部组件'
+              }
+            },
+            computed:{
+
+            }
+        }
+        new Vue({
+            el: '#app',
+            data: {
+
+            },
+            components: {
+                // 2.挂载子组件
+                App
+            }
+
+        })
+
+
+
+    </script>
+</body>
+</html>
